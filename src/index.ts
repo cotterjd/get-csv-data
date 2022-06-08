@@ -13,16 +13,21 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get(`/votes`, async (req: Request, res: Response) => {
+app.get(`/version`, (req: Request, res: Response) => {
+    const version = require(`../package.json`).version
+    return res.send(version)
+});
+
+app.get(`/data`, async (req: Request, res: Response) => {
   try {
-    const data = await csv().fromFile(`./votes.csv`);
+    const data = await csv().fromFile(`./data.csv`);
     return res.json(data);
   } catch (_) {
     return res.json({});
   }
 });
 
-const port = 3000;
+const port = 4000;
 app.listen(port, () => {
   console.log(`Server running on port`, port);
 });

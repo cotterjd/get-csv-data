@@ -1,13 +1,13 @@
 {
-  "name": "get-voting-data",
+  "name": "get-csv-data",
   "version": "0.0.0",
-  "description": "returns voteing data from csv file",
+  "description": "returns data from csv file",
   "main": "src/index.ts",
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ts-node src/index.test.ts"
   },
   "keywords": [
     "node",
@@ -20,6 +20,7 @@
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/node": "^16.10.1",
+    "isomorphic-fetch": "^3.0.0",
     "nodemon": "^2.0.13",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
